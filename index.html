@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Club Central Page</title>
+  <style>
+    /* Basic Reset & Typography */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #1a1a1a;
+      color: #fff;
+    }
+
+    /* Title Banner */
+    .header {
+      background-color: #330000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 2em;
+    }
+
+    /* Layout Container */
+    .container {
+      display: flex;
+      height: calc(100vh - 80px); /* Full height minus header */
+    }
+
+    /* Left Sidebar (Contents) with Particle Effects */
+    .sidebar-left {
+      width: 200px;
+      background-color: #800000; /* Maroon color */
+      position: relative;
+      overflow: hidden;
+    }
+    /* Particle canvas positioned behind content */
+    #particles-js {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+    /* Container for link boxes to appear above particles */
+    .link-boxes {
+      position: relative;
+      z-index: 1;
+      padding: 20px;
+    }
+    .link-boxes h2 {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+    .link-boxes ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .link-boxes li {
+      margin: 10px 0;
+    }
+    /* Link boxes styling */
+    .link-boxes a {
+      display: block;
+      padding: 10px;
+      background-color: #550000;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #990000;
+      border-radius: 4px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .link-boxes a:hover {
+      background-color: #770000;
+      transform: scale(1.02);
+    }
+
+    /* Main Content (Background Image with Overlay) */
+    .main-content {
+      flex: 1;
+      display: flex;
+      /* Added linear gradient overlay to darken the image */
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('david.png') no-repeat center center;
+      background-size: cover;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+    /* Ensuring links in main-content are white */
+    .main-content a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Right Sidebar (Todo List and Copyright) */
+    .sidebar-right {
+      width: 200px;
+      background-color: #330000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .sidebar-right h2 {
+      font-size: 1.2em;
+      margin-top: 0;
+    }
+    .todo-list {
+      list-style: none;
+      padding: 0;
+    }
+    .todo-list li {
+      margin: 10px 0;
+    }
+    .footer {
+      font-size: 0.8em;
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+  <!-- Include particles.js library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+</head>
+<body>
+  <!-- Title Banner -->
+  <div class="header">Welcome to the <b>David Hater Club</b> Homepage!</div>
+  
+  <!-- Main Layout Container -->
+  <div class="container">
+    <!-- Left Sidebar: Contents with Particle Effects -->
+    <div class="sidebar-left">
+      <div id="particles-js"></div>
+      <div class="link-boxes">
+        <h2>Contents</h2>
+        <ul>
+          <li><a href="#link1">Home</a></li>
+          <li><a href="#link2">[to be implemented]</a></li>
+          <li><a href="#link3">[to be implemented]</a></li>
+          <li><a href="#link4">[to be implemented]</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Main Content Area: Big Background Image with Overlay-->
+    <div class="main-content">
+      <!-- Main Content Header-->
+      <div>
+        <h2><b>NOTICES</b></h2>
+        <br>
+        Nothing here yet.
+        <br>
+        -
+        <br>
+        <h2><b>NEWS & UPDATES</b></h2>
+        <br>
+        This webpage is currently under development. Please leave any suggestions <a href="https://forms.office.com/r/ZErYcvSL6N">here</a>.
+        <br>
+        Help us build this webpage. Any contribution is greatly appreciated.
+        <br>
+        -
+        <br>
+        <h2><b>OUR MISSION</b></h2>
+        <br>
+        We hate david.
+      </div>
+    </div>
+    
+    <!-- Right Sidebar: Todo List and Copyright -->
+    <div class="sidebar-right">
+      <div>
+        <h2>To-do List.</h2>
+        <ul class="todo-list">
+          <li>1. Hate</li>
+          <li>2. David</li>
+          <li>3. Repeat</li>
+        </ul>
+      </div>
+      <div class="footer">
+        &copy; 2025 David Hater Inc. <br> All rights reserved.
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- JavaScript for Particle Effects -->
+  <script>
+    // Initialize particles.js in the left sidebar with increased particle count
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 150,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#ff0000"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          }
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+          "anim": {
+            "enable": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false
+          }
+        },
+        "line_linked": {
+          "enable": false
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 50,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 1
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+  
+  <!-- Optional: JavaScript for additional interactivity (if needed) -->
+  <script>
+    // The links now function normally (navigate to their target anchors)
+    // Additional JS can be added here if more interactivity is desired.
+  </script>
+</body>
+</html>
